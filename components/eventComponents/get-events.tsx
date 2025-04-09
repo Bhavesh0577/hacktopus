@@ -16,6 +16,7 @@ import {
 import { Separator } from "../ui/separator";
 import { Events } from "@prisma/client";
 import { JoinEventForm } from "./join-event";
+import { format } from "date-fns";
 
 const GetEvents = () => {
   const [events, setEvents] = useState<Events[]>([]);
@@ -70,7 +71,9 @@ const GetEvents = () => {
 
                 <CardContent className="p-0">
                   <div className="flex items-center text-secondary text px-2">
-                    <span className="font-semibold">{event.start_date ? (new Date(event.start_date), 'MMM dd, yyyy') : 'TBD'}</span>
+                    <span className="font-semibold">
+                      {event.start_date ? format(new Date(event.start_date), 'MMM dd, yyyy') : 'TBD'}
+                    </span>
                   </div>
 
                   {event.location && (
@@ -185,28 +188,28 @@ const GetEvents = () => {
                     <div className="relative w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-secondary">
                       <span className="absolute top-0 left-0 w-full h-1/2 flex items-center justify-center text-xs">
                         {selectedEvent.start_date
-                          ? (new Date(selectedEvent.start_date), 'MMM').toUpperCase()
+                          ? format(new Date(selectedEvent.start_date), 'MMM').toUpperCase()
                           : 'TBD'}
                       </span>
                       <span className="absolute bottom-0 left-0 w-full h-1/2 flex items-center justify-center font-semibold">
                         {selectedEvent.start_date
-                          ? (new Date(selectedEvent.start_date), 'd')
+                          ? format(new Date(selectedEvent.start_date), 'd')
                           : 'TBD'}
                       </span>
                     </div>
                     <div>
                       <div className="font-semibold text-secondary">
                         {selectedEvent.start_date
-                          ? (new Date(selectedEvent.start_date), 'EEEE MMMM d')
+                          ? format(new Date(selectedEvent.start_date), 'EEEE MMMM d')
                           : 'TBD'}
                       </div>
                       <div className="text-sm text-secondary">
                         {selectedEvent.start_date
-                          ? (new Date(selectedEvent.start_date), 'HH:mm')
+                          ? format(new Date(selectedEvent.start_date), 'HH:mm')
                           : 'TBD'}{' '}
                         -{' '}
                         {selectedEvent.end_date
-                          ? (new Date(selectedEvent.end_date), 'HH:mm')
+                          ? format(new Date(selectedEvent.end_date), 'HH:mm')
                           : 'TBD'}
                       </div>
                     </div>
