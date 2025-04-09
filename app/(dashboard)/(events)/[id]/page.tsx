@@ -2,9 +2,33 @@
 
 import React from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { Button } from '../../../../components/ui/button';
-import { ArrowLeft, Calendar, CalendarDays, Clock, ExternalLink, Globe, MapPin, Share2, Ticket, Users } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowLeft, Calendar, CalendarDays, Clock, ExternalLink, Globe, MapPin, Share2, Ticket, Users } from 'lucide-react';
+
+// Simplified button component to avoid import issues
+function Button({
+    children,
+    className = "",
+    variant = "default",
+    onClick = () => { }
+}) {
+    const baseClasses = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none";
+
+    const variantClasses = {
+        default: "bg-purple-600 text-white hover:bg-purple-700",
+        ghost: "text-zinc-400 hover:text-white hover:bg-zinc-800/50",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+    };
+
+    return (
+        <button
+            className={`${baseClasses} ${variantClasses[variant]} ${className}`}
+            onClick={onClick}
+        >
+            {children}
+        </button>
+    );
+}
 
 // Sample data - This would be replaced with a real API call
 const sampleEvents = [
