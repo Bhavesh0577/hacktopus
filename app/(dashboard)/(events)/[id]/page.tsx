@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
+import { Button } from '../../../../components/ui/button';
 import { ArrowLeft, Calendar, CalendarDays, Clock, ExternalLink, Globe, MapPin, Share2, Ticket, Users } from 'lucide-react';
 import Link from 'next/link';
 

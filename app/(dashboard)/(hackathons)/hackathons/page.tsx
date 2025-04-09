@@ -1,13 +1,13 @@
 "use client"
-import GetEvents from "@/components/eventComponents/get-events";
-import BrowseEventsByTheme from "@/components/hackathonComponents/browseEventsByTheme";
-import DisplayHackathons from "@/components/hackathonComponents/get-hackathons";
-import Hackathons from "@/components/hackathonComponents/hackathons";
+import GetEvents from "../../../../components/eventComponents/get-events";
+import BrowseEventsByTheme from "../../../../components/hackathonComponents/browseEventsByTheme";
+import DisplayHackathons from "../../../../components/hackathonComponents/get-hackathons";
+import Hackathons from "../../../../components/hackathonComponents/hackathons";
 import dynamic from "next/dynamic";
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../../components/ui/tabs";
 
-// const MapComponent = dynamic(() => import("@/components/hackathonComponents/map"), { ssr: false });
-// const Hackathons = dynamic(() => import("@/components/hackathonComponents/hackathons"), { ssr: false });
+// const MapComponent = dynamic(() => import("../../../../components/hackathonComponents/map"), { ssr: false });
+// const Hackathons = dynamic(() => import("../../../../components/hackathonComponents/hackathons"), { ssr: false });
 
 export default function Page() {
   return (
@@ -36,6 +36,5 @@ export default function Page() {
         <DisplayHackathons />
       </div>
     </div>
-
   );
 }
