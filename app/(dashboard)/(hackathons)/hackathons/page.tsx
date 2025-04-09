@@ -33,7 +33,7 @@ export default function Page() {
           <MapComponent />
         </TabsContent>
       </Tabs> */}
-      <DisplayHackathons />
+        <DisplayHackathons />
       </div>
     </div>
 
